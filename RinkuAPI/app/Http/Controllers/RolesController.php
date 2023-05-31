@@ -9,11 +9,11 @@ class RolesController extends ApiController
 {
     public function ListaRoles()
     {
-        $roles = RolModel::where('status', '=', 'true')->getAll();
+        $roles = RolModel::where('status', '=', 'true')->get();
         return $this->jsonResponse('Lista de roles', $roles);
     }
 
-    public function RegistrarRole(Request $request)
+    public function RegistrarRol(Request $request)
     {
         try {
             $datos = $request->all();
@@ -27,7 +27,7 @@ class RolesController extends ApiController
         }
     }
 
-    public function EditarRole(Request $request, $id)
+    public function EditarRol(Request $request, $id)
     {
         try {
             $datos = $request->all();

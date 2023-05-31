@@ -11,6 +11,6 @@ class ApiController extends Controller
     use AuthorizesRequests, ValidatesRequests;
     protected function jsonResponse($mensaje, $datos, $status = 200): JsonResponse
     {
-        return response()->json(['Mensaje', $mensaje, 'Datos' => $datos], $status);
+        return response()->json(['Mensaje' => $mensaje, 'Datos' => $datos], $status);
     }
 }
