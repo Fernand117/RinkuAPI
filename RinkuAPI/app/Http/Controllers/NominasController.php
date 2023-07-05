@@ -13,6 +13,13 @@ class NominasController extends ApiController
         return $this->jsonResponse('Lista de nominas', $nominas);
     }
 
+    public function ListaNominaID($id)
+    {
+        $nomina = NominaModel::where('status', '=', 'true', 'and', 'id_empleado', '=', $id)->get();
+
+        return $this->jsonResponse('Nomina del empleado', $nomina);
+    }
+
     public function RegistrarNomina(Request $request)
     {
         try {
